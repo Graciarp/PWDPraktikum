@@ -1,0 +1,262 @@
+/* MEMBUAT TAMPILAN WEB MENJADI RESPONSIVE */
+.contaier { 
+	width: 100%;
+	height: auto;
+}
+.grid-container-1 { /* untuk tampilan grid yang hanya terdapat satu kolom */
+	display: grid;
+	grid-template-columns: auto; /* membuat 1 kolom grid */
+}
+.grid-container-2 { /* untuk tampilan grid yang hanya terdapat dua kolom*/
+	display: grid;
+	padding-top: 20px; /* mengatur jarak atas pada grid 2 sejauh 20px */
+	grid-template-columns: auto auto; /* membuat 2 kolom grid */
+}
+.grid-container-3 { /* untuk tampilan grid yang hanya terdapat 3 kolom */
+	display: grid;
+	grid-template-columns: auto auto auto; /* membuat 3 kolom grid */
+	background-color: #FFC700;
+}
+.grid-item-1 {
+	background-color: #FFF;
+}
+.grid-item-2 {
+	padding-left: 10px;
+	background-color: #FFC700;
+}
+.grid-item-3 {
+	text-align: center;
+	color: #FFF;
+	background-color: #000;
+}
+
+/* MENGATUR FONT KESELURUHAN */
+#font {
+	font-family: Poppins;
+}
+
+
+/* MENGATUR HEADER */
+nav { /* Membuat navbar */
+	position: static; /* Value static merupakan nilai default dari position (membuat suatu element berjejer/tidak saling menindih) */
+	height: 35px; /* mengatur tinggi peletakkan link pada navbar */
+	background: #FFC700;
+}
+/* menyesuaikan antara link teks dengan lebar area (nav) */
+.wrap {
+	width: 100%;
+	margin: 0 auto;
+}
+/* mengatur tata letak link teks pada navbar */
+.menu {
+    display: inline-block; /* display suatu elemen html yang tetap bergerak horizontal dan tidak menambahkan baris baru untuk elemen selanjutnya tetapi ukuran width dan height masing - masing elemen tetap dapat diatur */
+    float: right; /* menentukan bahwa sebuah elemen (link teks) harus mengapung disebelah kanan dari posisi containing block*/
+}
+.menu ul { /* ketika memanggil class menu dengan menambahkan sintaks ul */
+    list-style: none; /* menentukan atau mengatur list dalam satu deklarasi */
+    padding: 0;
+    margin: 0;
+}
+.menu ul li { /* ketika memanggil class menu dengan menambahkan sintaks ul li */
+    display: inline-block;
+}
+.menu ul li a { /* ketika memanggil class menu dengan menambahkan sintaks ul li dan a */
+    padding: 0 20px; /* mengatur jarak elemen html dari dalam (left, right, top, bottom) */
+    display: inline-block;
+    line-height: 35px; /* mengatur ketinggian kotak garis elemen dan menetapkan jarak antara dua garis besar yang berdekatan */
+}
+.menu li:hover{
+    background-color: #000;
+}
+/* mengatur teks link pada navbar */
+a{
+  text-decoration: none; /* Memberikan efek garis pada text (overline / line-through / underline / none) */
+  color: #000000; /* mengatur warna teks */
+  display: block;/* Display elemen html yang tetap bergerak horizontal, tetapi otomatis menambahkan baris baru untuk elemen selanjutnya */
+  transition: 0.3s; /* Memberikan transisi dengan speed 0,3 detik */
+}
+/* Hover berfungsi untuk mengatur link yang sedang ditunjuk oleh pointer */
+a:hover {
+  transition: 0.3s; 
+  color: #FFF;
+}
+/*Digunakan apabila lebar layar website maksimal 100px*/
+@media screen and (max-width: 100px){ /* untuk layar device berukuran maksimal 100px*/
+	.menu {
+		display: none;
+	}
+	.menu.sh {
+		display: block;
+		position: absolute;
+		top: 50px;
+		background: #BF0F28;
+		width: 100%;
+		left: 0;
+	}
+	.menu a:hover {
+		color: #FFF;
+		background: #353535;
+	}
+	.menu ul li {
+		display: block;
+		text-align: center;
+	}
+}
+
+
+/* MENGATUR BODY 1 */
+.font-judul-1 {
+	margin-left: 0.8em;
+	margin-right: 20px;
+	line-height: 1.0em;
+	text-align: center;
+}
+.font-isi-1 {
+	margin-left: 1.5em;
+	margin-right: 20px;
+	align-content: center;
+	line-height: 1.5em;
+}
+.img-1 {
+	margin-right: 1.5em;
+	align-content: center;
+	width: 20em;
+}
+/* Digunakan apabila lebar layar website minimal 1000px*/
+@media screen and (min-width: 1000px){ /* untuk layar device berukuran maksimal 1000px*/
+	.font-judul-1 {
+		padding-left: 2em;
+		margin-left: 2.5em;
+		line-height: 1.0em;
+		align-content: center;
+		text-align: center;
+	}
+	.font-isi-1 {
+		padding-left: 5em;
+		margin-left: 5em;
+		line-height: 1.5em;
+		align-content: center;
+		text-align: justify;
+	}
+	.img-1 {
+		padding-right: : 5em;
+		margin-right: 10em;
+		align-content: center;
+		width: 30em;
+	}
+}
+
+
+/*BUTTON HITAM*/
+.button {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #000;
+	border: none;
+	font-family: Poppins;
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+	width: auto;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+.button span:after {
+	font-family: Poppins;
+	content: '>>';
+	color: #FFC700;
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+.button:hover span {
+	color: #FFC700;
+	padding-right: 25px;
+}
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+
+/*BUTTON SHADOWS PUTIH*/
+.button-2 {
+	background-color: #FFF;
+	border: none;
+	width: 15em;
+	height: 3em;
+	color: #FFC700;
+	font-family: Poppins;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 16px;
+	cursor: pointer;
+	border-radius: 4px;
+	-transition-duration: 0.4s;
+}
+.button-2:hover {
+	box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 10px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*BUTTON SHADOWS HITAM*/
+.button-3 {
+	background-color: #000;
+	border: none;
+	width: 15em;
+	height: 3em;
+	color: #FFC700;
+	font-family: Poppins;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 16px;
+	cursor: pointer;
+	border-radius: 4px;
+	-transition-duration: 0.4s;
+}
+.button-3:hover {
+	box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 10px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* MEMBUAT KOTAK UNTUK GRID SKILL */
+.rectangle {
+	width: 100%;
+	height: auto;
+	background-color: #FFC700;
+	text-align: center;
+	color: #000;
+}
+
+
+/* ISI GRID EXPERIENCE */
+.img-2 {
+	margin-right: 1.5em;
+	align-content: center;
+	width: 45em;
+}
+
+
+/* ISI GRID CONTACT PERSON DAN FORM */
+#isi-terakhir-kiri {
+	margin-left: 1.5em;
+}
+#isi-terakhir-kanan {
+	margin-right: 1.5em;
+}
+.icon {
+	width: 40px;
+	border-radius: 50px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
